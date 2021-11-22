@@ -48,3 +48,8 @@ body {
 .is-hidden {
   display: none;
 }
+
+.link-card {
+  text-decoration: none;
+  color: black;
+}
