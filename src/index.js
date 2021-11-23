@@ -1,7 +1,7 @@
 import './css/styles.css';
 import axios from 'axios';
 import { Notify } from 'notiflix';
-import {fetchPicture} from './fetch'
+import {fetchPicture} from './fetch';
 import {showPictures} from './show';
 
 const search_form = document.querySelector('#search-form');
@@ -27,14 +27,19 @@ search_form.addEventListener('submit', (e) => {
      return;
      };
 
+
 fetchPicture(value).then(showPictures);
 page += 1;
 
- load_more.classList.remove('is-hidden');
+
+setTimeout(() => {
+  load_more.classList.remove('is-hidden');
+}, 2000);  
 
  
  if ([value] !== [value]) {
   gallery.innerHTML = '';
+  load_more.classList.add('is-hidden');
    }
   });
 

@@ -8,7 +8,10 @@ const gallery = document.querySelector('.gallery');
 export function showPictures(data) {
    
     if (data.total === 0) {
-      load_more.classList.add('is-hidden');
+      setTimeout(() => {
+        load_more.classList.add('is-hidden');
+      }, 2000);     
+          
       return Notify.failure('Sorry, there are no images matching your search query. Please try again.');
     }            
    
