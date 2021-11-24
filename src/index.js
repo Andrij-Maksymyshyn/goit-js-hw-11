@@ -32,6 +32,7 @@ fetchPicture(value).then(showPictures);
 page += 1;
 
 
+
 setTimeout(() => {
   load_more.classList.remove('is-hidden');
 }, 2000);  
