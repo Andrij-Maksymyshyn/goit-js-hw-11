@@ -1,20 +1,10 @@
-import { Notify } from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const load_more = document.querySelector('.load-more');
 const gallery = document.querySelector('.gallery');
 
-export function showPictures(data) {
-   
-    if (data.total === 0) {
-      setTimeout(() => {
-        load_more.classList.add('is-hidden');
-      }, 2000);     
-          
-      return Notify.failure('Sorry, there are no images matching your search query. Please try again.');
-    }            
-   
+export function showPictures(data) {      
+        
     const markupPicture = data.hits
       .map((card) => {
       return `<div class="photo-card">

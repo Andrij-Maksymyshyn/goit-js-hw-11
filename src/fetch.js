@@ -11,21 +11,31 @@ export async function fetchPicture (value) {
        const url = `?key=24382748-1dfb63c81149146d5ea200f75&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${pageSize}`;
        const response = await axios.get(url);
        page += 1;
+
+
+       load_more.classList.remove('is-hidden');
        
        if (response.data.total <= pageSize) {
        load_more.classList.add('is-hidden');
        }
+
+       if (response.data.total === 0) {
+      load_more.classList.add('is-hidden');
+      return Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+    }            
       
       
       if ((page <= 2) && response.data.total !== 0) {   
         Notify.info(`Hooray! We found ${response.data.totalHits} images.`);
                 }
-                
+
+                      
     return response.data;
     } catch (error) {
       console.error(error);
     }        
       };
+
 
       input.addEventListener('input', () => {
         page = 1;

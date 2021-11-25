@@ -32,12 +32,6 @@ fetchPicture(value).then(showPictures);
 page += 1;
 
 
-
-setTimeout(() => {
-  load_more.classList.remove('is-hidden');
-}, 2000);  
-
- 
  if ([value] !== [value]) {
   gallery.innerHTML = '';
   load_more.classList.add('is-hidden');
